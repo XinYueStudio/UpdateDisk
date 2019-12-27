@@ -1,0 +1,53 @@
+directories:
+  output: 0.1.0
+  buildResources: build
+extraMetadata:
+  main: main.js
+files:
+  - filter:
+      - package.json
+      - node_modules/
+      - Build/
+      - main.js
+      - index.html
+      - logo.png
+  - from: 'H:\Electron\WebGLTest\dist/main'
+  - from: 'H:\Electron\WebGLTest\dist/renderer'
+  - from: 'H:\Electron\WebGLTest\dist/renderer-dll'
+extraResources:
+  - from: static
+    to: static
+productName: MicroLight
+appId: com.MicroLight.Home
+publish:
+  - provider: generic
+    url: 'https://www.xinyuestudio.com/download/'
+asar: true
+nsis:
+  oneClick: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerIcon: icon_256.ico
+  uninstallerIcon: icon_256.ico
+  installerHeaderIcon: icon_256.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: MicroLight
+dmg:
+  contents:
+    - x: 410
+      'y': 150
+      type: link
+      path: /Applications
+    - x: 130
+      'y': 150
+      type: file
+win:
+  icon: icon_256.ico
+  target:
+    - target: nsis
+      arch:
+        - ia32
+        - x64
+extends: 'file:H:\Electron\WebGLTest\node_modules\electron-webpack\out\electron-builder.js'
+electronVersion: 2.0.18
