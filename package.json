@@ -86,7 +86,7 @@
     }
   },
   "devDependencies": {
-    "electron": "^2.0.18",
+    "electron": "^11.5.0",
     "electron-builder": "^20.38.2",
     "electron-webpack": "^2.1.2"
   },
